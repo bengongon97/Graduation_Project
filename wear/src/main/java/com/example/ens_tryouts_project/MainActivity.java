@@ -13,7 +13,7 @@ import com.example.ens_tryouts_project.Schedule.ScheduleActivity;
 public class MainActivity extends WearableActivity {
 
     private TextView mTextView;
-
+//this is the pushed new version
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
