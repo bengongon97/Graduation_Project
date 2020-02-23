@@ -44,20 +44,25 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
 
         RippleAPIService service = RetrofitClientInstance.getRetrofitInstance().create(RippleAPIService.class);
         Call<ScheduleClass> call = service.scheduleCall();
+
+        //String xdxd = call.request().url().toString();
+
         call.enqueue(new Callback<ScheduleClass>() {
             @Override
             public void onResponse(Call<ScheduleClass> call, Response<ScheduleClass> response) {
                 //progressBar.dismiss();
-                if (response.isSuccessful()) {
+
+                String xd = response.raw().request().url().toString();
+                Log.d("URL of request is:", xd);
+
+                if (response.isSuccessful()){
                     //CALL SUCCESSFUL
                     weeklySchedule = response.body();
                     ScheduleDaysSubClass tmp = classGetter(theDay);
                     List<List<String>> classListOfList = getThatList(tmp);
 
                     myAdapter = new ScheduleDetailedAdapter(classListOfList, theDay);
-
                     detailsRecyclerView.setAdapter(myAdapter);
-
                 } else {
                     Toast.makeText(ScheduleDetailedActivity.this, "Unsuccessful response", Toast.LENGTH_LONG).show();
                 }
@@ -154,36 +159,24 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
     }
 
     public ScheduleDaysSubClass classGetter(String theDay){
-        ScheduleDaysSubClass theClassesOfTheDay = null;
+        ScheduleDaysSubClass theClassesOfTheDay = new ScheduleDaysSubClass("","","","","","",
+                "","", "", "" ,"", "", "", "", "", "", "");
         switch (theDay) {
-            case "mon":
+            case "Monday":
                 theClassesOfTheDay = weeklySchedule.getMon();
                 break;
-            case "tue":
+            case "Tuesday":
                 theClassesOfTheDay = weeklySchedule.getTue();
                 break;
-            case "wed":
+            case "Wednesday":
                 theClassesOfTheDay = weeklySchedule.getWed();
                 break;
-            case "thu":
+            case "Thursday":
                 theClassesOfTheDay = weeklySchedule.getThu();
                 break;
-            case "fri":
+            case "Friday":
                 theClassesOfTheDay = weeklySchedule.getFri();
                 break;
-
-            case "sat":
-                if (weeklySchedule.getSat() == null || weeklySchedule.getSat().isEmpty()) {
-                    theClassesOfTheDay = null;
-                }
-                break;
-            case "sun":
-                if (weeklySchedule.getSun() == null || weeklySchedule.getSun().isEmpty()) {
-                    theClassesOfTheDay = null;
-                }
-                break;
-            default:
-                theClassesOfTheDay = weeklySchedule.getMon(); //MIGHT WANNA CHANGE LATER!!
         }
         return theClassesOfTheDay;
     }

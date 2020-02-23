@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ens_tryouts_project.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ScheduleDetailedAdapter extends RecyclerView.Adapter<ScheduleDetailedAdapter.ScheduleDetailedView> {
@@ -26,7 +25,7 @@ public class ScheduleDetailedAdapter extends RecyclerView.Adapter<ScheduleDetail
         TextView classNameTextView;
         TextView classHourTextView;
 
-        public ScheduleDetailedView(View itemView) {
+        ScheduleDetailedView(View itemView) {
             super(itemView);
 
             classNameTextView =  itemView.findViewById(R.id.classNameTextView);
@@ -59,6 +58,6 @@ public class ScheduleDetailedAdapter extends RecyclerView.Adapter<ScheduleDetail
         if(classListOfTheList.get(1).size() != 0)
             return classListOfTheList.get(1).size();
         else
-            return 0;
+            return 1; //to show that there is no class
     }
 }

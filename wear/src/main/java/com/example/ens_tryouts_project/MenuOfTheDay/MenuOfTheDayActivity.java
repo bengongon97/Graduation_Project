@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,9 @@ public class MenuOfTheDayActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<MenuOfTheDayClass>> call, Response<List<MenuOfTheDayClass>> response) {
                 //progressBar.dismiss();
+                String xd = response.raw().request().url().toString();
+                Log.d("URL of request is:", xd);
+
                 if (response.isSuccessful()) {
                     menuArray = response.body();
                     myMenuAdapter = new MenuOfTheDayAdapter(MenuOfTheDayActivity.this, menuArray);
