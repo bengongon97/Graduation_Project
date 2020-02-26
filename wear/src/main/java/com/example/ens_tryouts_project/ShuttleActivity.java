@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ens_tryouts_project.Schedule.ScheduleAdapter;
 import com.example.ens_tryouts_project.Schedule.ScheduleDetailedActivity;
+import com.example.ens_tryouts_project.databinding.ActivityShuttleAvailableDaysBinding;
+import com.example.ens_tryouts_project.databinding.ActivityShuttleBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,11 +22,15 @@ import java.util.List;
 public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter.OnItemClickListener{
 
     List<String> destinationList = new ArrayList<>();
+    private ActivityShuttleBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shuttle);
+        //setContentView(R.layout.activity_shuttle);
+        binding = ActivityShuttleBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         destinationList.add("Taksim");
         destinationList.add("Kadıköy");
@@ -33,12 +40,9 @@ public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter
         destinationList.add("");
         destinationList.add("Hizmetten çekilmemiştir.");
 
-        TextView destinationsTextView = findViewById(R.id.destinationsTextView); //If i ever use it
-        RecyclerView destinationsRecyclerView = findViewById(R.id.destinationsRecyclerView);
-
-        destinationsRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        binding.destinationsRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         ShuttleAdapter myAdapter = new ShuttleAdapter(destinationList);
-        destinationsRecyclerView.setAdapter(myAdapter);
+        binding.destinationsRecyclerView.setAdapter(myAdapter);
         myAdapter.setOnItemClickListener(this);
     }
 
