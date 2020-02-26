@@ -23,7 +23,6 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
-
         daysOfTheWeek.add("Monday");
         daysOfTheWeek.add("Tuesday");
         daysOfTheWeek.add("Wednesday");
@@ -31,7 +30,6 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         daysOfTheWeek.add("Friday");
         daysOfTheWeek.add("Saturday");
         daysOfTheWeek.add("Sunday");
-
 
         TextView courseScheduleTextView = findViewById(R.id.courseScheduleTextView); //If I ever need it...
         RecyclerView daysRecyclerView = findViewById(R.id.daysRecyclerView);

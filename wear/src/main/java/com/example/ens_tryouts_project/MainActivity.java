@@ -1,6 +1,7 @@
 package com.example.ens_tryouts_project;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
@@ -13,7 +14,8 @@ import com.example.ens_tryouts_project.Schedule.ScheduleActivity;
 public class MainActivity extends WearableActivity {
 
     private TextView mTextView;
-//this is the pushed new version
+    //private ResultProfileBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,6 @@ public class MainActivity extends WearableActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MenuOfTheDayActivity.class);
-                //intent.putExtra("index", adapterLedgerResultList.get(position).getLedger_hash());
                 startActivity(intent);
             }
         });
@@ -37,7 +38,15 @@ public class MainActivity extends WearableActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ScheduleActivity.class);
-                //intent.putExtra("index", adapterLedgerResultList.get(position).getLedger_hash());
+                startActivity(intent);
+            }
+        });
+
+        ImageView busImage = findViewById(R.id.busImage);
+        busImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ShuttleActivity.class);
                 startActivity(intent);
             }
         });
