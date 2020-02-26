@@ -1,4 +1,4 @@
-package com.example.ens_tryouts_project.Schedule;
+package com.example.ens_tryouts_project;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,36 +7,38 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ens_tryouts_project.Schedule.ScheduleAdapter;
+
 import java.util.List;
 
-public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ScheduleView> {
+public class ShuttleAdapter extends RecyclerView.Adapter<ShuttleAdapter.ShuttleView> {
 
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
 
-    private ScheduleAdapter.OnItemClickListener onItemClickListener;
-    List<String> daysOfTheWeek;
+    private ShuttleAdapter.OnItemClickListener onItemClickListener;
+    List<String> destinationList;
 
-    public ScheduleAdapter(List<String> daysOfTheWeek){
-        this.daysOfTheWeek = daysOfTheWeek;
+    public ShuttleAdapter(List<String> destinationList){
+        this.destinationList = destinationList;
     }
 
-    public void setOnItemClickListener(ScheduleAdapter.OnItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(ShuttleAdapter.OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
     @NonNull
     @Override
-    public ScheduleAdapter.ScheduleView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ShuttleAdapter.ShuttleView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = new TextView(parent.getContext());
-        return new ScheduleView(view);
+        return new ShuttleAdapter.ShuttleView(view);
     }
 
-    class ScheduleView extends RecyclerView.ViewHolder {
+    class ShuttleView extends RecyclerView.ViewHolder {
         TextView textView;
 
-        public ScheduleView(View itemView) {
+        public ShuttleView(View itemView) {
 
             super(itemView);
             textView = (TextView) itemView;
@@ -44,8 +46,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ScheduleAdapter.ScheduleView holder, int position) {
-        holder.textView.setText(daysOfTheWeek.get(position));
+    public void onBindViewHolder(@NonNull final ShuttleAdapter.ShuttleView holder, int position) {
+        holder.textView.setText(destinationList.get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +61,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
 
     @Override
     public int getItemCount() {
-        return daysOfTheWeek.size();
+        return destinationList.size();
     }
+
 }

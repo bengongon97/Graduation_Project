@@ -36,7 +36,8 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
         final String theDay = intent.getStringExtra("theDay");
 
         TextView dayTextView = findViewById(R.id.dayTextView);
-        dayTextView.setText(theDay);
+        if(theDay != null)
+            dayTextView.setText(theDay);
 
         detailsRecyclerView = findViewById(R.id.detailsRecyclerView);
         detailsRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -44,8 +45,6 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
 
         RippleAPIService service = RetrofitClientInstance.getRetrofitInstance().create(RippleAPIService.class);
         Call<ScheduleClass> call = service.scheduleCall();
-
-        //String xdxd = call.request().url().toString();
 
         call.enqueue(new Callback<ScheduleClass>() {
             @Override
