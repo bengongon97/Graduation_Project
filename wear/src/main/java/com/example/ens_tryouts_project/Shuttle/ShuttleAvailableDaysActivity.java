@@ -1,4 +1,4 @@
-package com.example.ens_tryouts_project;
+package com.example.ens_tryouts_project.Shuttle;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,7 +1,6 @@
 package com.example.ens_tryouts_project;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
@@ -10,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.ens_tryouts_project.MenuOfTheDay.MenuOfTheDayActivity;
 import com.example.ens_tryouts_project.Schedule.ScheduleActivity;
+import com.example.ens_tryouts_project.Shuttle.ShuttleActivity;
 
 public class MainActivity extends WearableActivity {
 

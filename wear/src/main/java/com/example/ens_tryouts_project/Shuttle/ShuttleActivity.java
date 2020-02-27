@@ -1,18 +1,13 @@
-package com.example.ens_tryouts_project;
+package com.example.ens_tryouts_project.Shuttle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ens_tryouts_project.Schedule.ScheduleAdapter;
-import com.example.ens_tryouts_project.Schedule.ScheduleDetailedActivity;
-import com.example.ens_tryouts_project.databinding.ActivityShuttleAvailableDaysBinding;
 import com.example.ens_tryouts_project.databinding.ActivityShuttleBinding;
 
 import java.util.ArrayList;
