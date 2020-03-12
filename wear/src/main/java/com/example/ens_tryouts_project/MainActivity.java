@@ -13,9 +13,6 @@ import com.example.ens_tryouts_project.Shuttle.ShuttleActivity;
 
 public class MainActivity extends WearableActivity {
 
-    private TextView mTextView;
-    //private ResultProfileBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
