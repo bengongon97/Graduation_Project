@@ -11,14 +11,14 @@ public class RetrofitClientInstance {
     private static final String BASE_URL = "https://www.sabanciuniv.edu/apps/test/";
 
     public static Retrofit getRetrofitInstance() {
-        /*Gson gson = new GsonBuilder()
+        Gson gson = new GsonBuilder()
                 .setLenient()
-                .create();*/
+                .create();
 
         if (retrofit == null) {
             retrofit = new retrofit2.Retrofit.Builder()
                     .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create(/*gson*/))
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
         }
         return retrofit;

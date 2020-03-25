@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+
 public class ShuttleAdapter extends RecyclerView.Adapter<ShuttleAdapter.ShuttleView> {
 
     public interface OnItemClickListener {
@@ -30,7 +31,7 @@ public class ShuttleAdapter extends RecyclerView.Adapter<ShuttleAdapter.ShuttleV
     @Override
     public ShuttleAdapter.ShuttleView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = new TextView(parent.getContext());
-        return new ShuttleAdapter.ShuttleView(view);
+        return new ShuttleView(view);
     }
 
     class ShuttleView extends RecyclerView.ViewHolder {
