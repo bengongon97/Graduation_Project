@@ -46,8 +46,8 @@ public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter
             @Override
             public void onResponse(Call<List<ShuttleClass>> call, Response<List<ShuttleClass>> response) {
                 //progressBar.dismiss();
-                String xd = response.raw().request().url().toString();
-                Log.i("URL of request is:", xd);
+                /*String xd = response.raw().request().url().toString();
+                Log.i("URL of request is:", xd);*/
 
                 if (response.isSuccessful()) {
                     actualList = response.body();
@@ -87,10 +87,10 @@ public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter
 
     @Override
     public void onItemClick(int position) {
-        Toast.makeText(this,""+ destinationList.get(position),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,""+ destinationList.get(position),Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, ShuttleAvailableDaysActivity.class);
-        intent.putExtra("theDestination", destinationList.get(position));
+        intent.putExtra("theDestinationObject", actualList.get(position));
         startActivity(intent);
     }
 }

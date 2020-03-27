@@ -1,8 +1,9 @@
 package com.example.ens_tryouts_project.Shuttle;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class GenericDaysClass {
+public class GenericDaysClass implements Serializable {
     List<String> to_campus;
     List<String> from_campus;
 

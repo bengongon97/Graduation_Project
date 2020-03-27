@@ -1,6 +1,8 @@
 package com.example.ens_tryouts_project.Shuttle;
 
-public class ShuttleClass {
+import java.io.Serializable;
+
+public class ShuttleClass implements Serializable {
 
     String route_name_eng;
     String route_name_tr;
