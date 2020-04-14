@@ -5,13 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.ens_tryouts_project.MenuOfTheDay.MenuOfTheDayActivity;
-import com.example.ens_tryouts_project.MenuOfTheDay.MenuOfTheDayAdapter;
-import com.example.ens_tryouts_project.MenuOfTheDay.MenuOfTheDayClass;
 import com.example.ens_tryouts_project.Network.RetrofitClientInstance;
 import com.example.ens_tryouts_project.Network.RippleAPIService;
 import com.example.ens_tryouts_project.databinding.ActivityShuttleBinding;
