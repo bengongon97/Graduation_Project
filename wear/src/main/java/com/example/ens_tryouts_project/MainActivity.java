@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.ens_tryouts_project.MenuOfTheDay.MenuOfTheDayActivity;
 import com.example.ens_tryouts_project.SUCard.SUCardActivity;

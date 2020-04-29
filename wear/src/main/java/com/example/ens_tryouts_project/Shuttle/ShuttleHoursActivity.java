@@ -16,7 +16,7 @@ public class ShuttleHoursActivity extends AppCompatActivity {
 
     private ActivityShuttleHoursBinding binding;
     ShuttleAdapter myShuttleDaysAdapter;
-    int flag = 0; //initially it is 0, meaning to_campus is set
+    int flag = 1; //initially it is 0, meaning from_campus is set, due to first-click fix.
     ShuttleClass theDestinationObject;
 
     @Override
@@ -32,7 +32,7 @@ public class ShuttleHoursActivity extends AppCompatActivity {
         final String theOnClickedDay = intent.getStringExtra("theClickedDay");
 
 
-        String headerTextView = theDestinationObject.getRoute_name_eng() + " - Campus";
+        String headerTextView = "To " + theDestinationObject.getRoute_name_eng();
         binding.destinationCampusTextView.setText(headerTextView); //Since it is the default, the name must be changed too.
         converterFactoryFromToTo(theOnClickedDay, flag);
 
@@ -41,13 +41,13 @@ public class ShuttleHoursActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(flag == 0){
                     flag = 1;
-                    String headerTextView = "Campus - " + theDestinationObject.getRoute_name_eng();
+                    String headerTextView = "To " + theDestinationObject.getRoute_name_eng();
                     binding.destinationCampusTextView.setText(headerTextView);
                     converterFactoryFromToTo(theOnClickedDay, flag);
                 }
                 else if(flag == 1){
                     flag = 0;
-                    String headerTextView = theDestinationObject.getRoute_name_eng() + " - Campus";
+                    String headerTextView = "From " + theDestinationObject.getRoute_name_eng();
                     binding.destinationCampusTextView.setText(headerTextView);
                     converterFactoryFromToTo(theOnClickedDay, flag);
                 }

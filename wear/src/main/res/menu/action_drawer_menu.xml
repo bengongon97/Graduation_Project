@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_planet_name"
+        android:icon="@drawable/ic_mysu"
+        android:title="MySU"/>
+    <item android:id="@+id/menu_number_of_moons"
+        android:icon="@drawable/ic_bus"
+        android:title="Bus" />
+    <item android:id="@+id/menu_volume"
+        android:icon="@drawable/ic_calender"
+        android:title="Calender" />
+    <item android:id="@+id/menu_surface_area"
+        android:icon="@drawable/ic_dining"
+        android:title="Dining" />
+</menu>

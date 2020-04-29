@@ -3,61 +3,60 @@ package com.example.ens_tryouts_project.Schedule;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
+import java.util.Map;
 
 public class ScheduleClass {
 
-    @SerializedName("mon")
-    ScheduleDaysSubClass mon;
-    @SerializedName("tue")
-    ScheduleDaysSubClass tue;
-    @SerializedName("wed")
-    ScheduleDaysSubClass wed;
-    @SerializedName("thu")
-    ScheduleDaysSubClass thu;
-    @SerializedName("fri")
-    ScheduleDaysSubClass fri;
+   /* @SerializedName("monday")
+    Map<String, List<String>> monday;*/
+    @SerializedName("tuesday")
+    ScheduleDaysSubClass tuesday;
+    @SerializedName("wednesday")
+    ScheduleDaysSubClass wednesday;
+    @SerializedName("thursday")
+    ScheduleDaysSubClass thursday;
+    @SerializedName("friday")
+    ScheduleDaysSubClass friday;
+    @SerializedName("saturday")
+    ScheduleDaysSubClass saturday;
+    @SerializedName("sunday")
+    ScheduleDaysSubClass sunday;
 
-    @SerializedName("sat")
-    List<String> sat;
-    @SerializedName("sun")
-    List<String> sun;
+    public ScheduleClass(/*Map<String, List<String>> monday,*/ ScheduleDaysSubClass tuesday, ScheduleDaysSubClass wednesday, ScheduleDaysSubClass thursday, ScheduleDaysSubClass friday, ScheduleDaysSubClass saturday, ScheduleDaysSubClass sunday) {
+        //this.monday = monday;
+        this.tuesday = tuesday;
+        this.wednesday = wednesday;
+        this.thursday = thursday;
+        this.friday = friday;
+        this.saturday = saturday;
+        this.sunday = sunday;
+    }
+/*
+    public Map<String, List<String>> getMonday() {
+        return monday;
+    }*/
 
-    //IDK whether I will use it
-    public ScheduleClass(ScheduleDaysSubClass mon, ScheduleDaysSubClass tue, ScheduleDaysSubClass wed, ScheduleDaysSubClass thu, ScheduleDaysSubClass fri, List<String> sat, List<String> sun) {
-        this.mon = mon;
-        this.tue = tue;
-        this.wed = wed;
-        this.thu = thu;
-        this.fri = fri;
-        this.sat = sat;
-        this.sun = sun;
+    public ScheduleDaysSubClass getTuesday() {
+        return tuesday;
     }
 
-    public ScheduleDaysSubClass getMon() {
-        return mon;
+    public ScheduleDaysSubClass getWednesday() {
+        return wednesday;
     }
 
-    public ScheduleDaysSubClass getTue() {
-        return tue;
+    public ScheduleDaysSubClass getThursday() {
+        return thursday;
     }
 
-    public ScheduleDaysSubClass getWed() {
-        return wed;
+    public ScheduleDaysSubClass getFriday() {
+        return friday;
     }
 
-    public ScheduleDaysSubClass getThu() {
-        return thu;
+    public ScheduleDaysSubClass getSaturday() {
+        return saturday;
     }
 
-    public ScheduleDaysSubClass getFri() {
-        return fri;
-    }
-
-    public List<String> getSat() {
-        return sat;
-    }
-
-    public List<String> getSun() {
-        return sun;
+    public ScheduleDaysSubClass getSunday() {
+        return sunday;
     }
 }

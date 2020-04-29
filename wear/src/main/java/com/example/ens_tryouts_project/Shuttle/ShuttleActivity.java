@@ -15,14 +15,14 @@ import com.example.ens_tryouts_project.databinding.ActivityShuttleBinding;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.Headers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter.OnItemClickListener{
 
-    List<ShuttleClass> actualList;// = new ArrayList<>();
+    List<ShuttleClass> actualList;
     List<String> destinationList = new ArrayList<>();
     ShuttleAdapter myShuttleAdapter;
     private ActivityShuttleBinding binding;

@@ -39,8 +39,6 @@ public class MenuOfTheDayActivity extends AppCompatActivity {
         callRequest(service);
     }
 
-
-
     public void callRequest(RippleAPIService service) {
 
         Call<List<MenuOfTheDayClass>> call = service.menuCall();
@@ -53,6 +51,7 @@ public class MenuOfTheDayActivity extends AppCompatActivity {
                 Log.d("URL of request is:", xd);
 
                 if (response.isSuccessful()) {
+                    //Toast.makeText(MenuOfTheDayActivity.this, "We got your results!", Toast.LENGTH_LONG).show();
                     menuArray = response.body();
                     myMenuAdapter = new MenuOfTheDayAdapter(MenuOfTheDayActivity.this, menuArray);
                     menuRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));

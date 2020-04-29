@@ -9,25 +9,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ens_tryouts_project.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ScheduleDetailedAdapter extends RecyclerView.Adapter<ScheduleDetailedAdapter.ScheduleDetailedView> {
 
-    List<List<String>> classListOfTheList;
-    private String theDay;
+    ScheduleDaysSubClass theClassOfToday;
+    //private String theDay;
 
-    public ScheduleDetailedAdapter(List<List<String>> classListOfTheList, String theDay) {
-        this.classListOfTheList = classListOfTheList;
-        this.theDay = theDay;
+    public ScheduleDetailedAdapter(ScheduleDaysSubClass theClassOfToday) {
+        this.theClassOfToday = theClassOfToday;
     }
 
     class ScheduleDetailedView extends RecyclerView.ViewHolder {
         TextView classNameTextView;
         TextView classHourTextView;
+        TextView locationTextView;
 
         ScheduleDetailedView(View itemView) {
             super(itemView);
 
+            locationTextView = itemView.findViewById(R.id.locationTextView);
             classNameTextView =  itemView.findViewById(R.id.classNameTextView);
             classHourTextView = itemView.findViewById(R.id.classHourTextView);
         }
@@ -41,22 +43,36 @@ public class ScheduleDetailedAdapter extends RecyclerView.Adapter<ScheduleDetail
 
     @Override
     public void onBindViewHolder(ScheduleDetailedView holder, final int position) {
-        if(classListOfTheList.size() == 0 || classListOfTheList.get(0).size() == 0 || classListOfTheList.get(1).size() == 0){
+        if(theClassOfToday == null || theClassOfToday.getClassCodeAndName().size() == 0){
             holder.classNameTextView.setText("There is no class today.");
             holder.classHourTextView.setText("No hour can be found.");
         }
         else{
-            holder.classNameTextView.setText(classListOfTheList.get(0).get(holder.getAdapterPosition()));
-            holder.classHourTextView.setText(classListOfTheList.get(1).get(holder.getAdapterPosition()));
+
+            List<String> begintime = theClassOfToday.getBegintime();
+            List<String> endtime = theClassOfToday.getEndtime();
+            List<String> uniqueall = theClassOfToday.getClassCodeAndName();
+            List<String> roomcode = theClassOfToday.getRoomcode();
+            List<String> buildingcode = theClassOfToday.getBuildingcode();
+
+            List<String> alltimes = new ArrayList<>();
+            List<String> alllocations = new ArrayList<>();
+
+            for(int i = 0; i < begintime.size(); i++){
+                alltimes.add(begintime.get(i) + " - " + endtime.get(i));
+                alllocations.add(buildingcode.get(i) + roomcode.get(i));
+            }
+
+            holder.classNameTextView.setText(uniqueall.get(holder.getAdapterPosition()));
+            holder.classHourTextView.setText(alltimes.get(holder.getAdapterPosition()));
+            holder.locationTextView.setText(alllocations.get(holder.getAdapterPosition()));
         }
     }
 
     @Override
     public int getItemCount() {
-        if(classListOfTheList.get(0).size() != 0)
-            return classListOfTheList.get(0).size();
-        if(classListOfTheList.get(1).size() != 0)
-            return classListOfTheList.get(1).size();
+        if(theClassOfToday.getClassCodeAndName().size() != 0)
+            return theClassOfToday.getClassCodeAndName().size();
         else
             return 1; //to show that there is no class
     }

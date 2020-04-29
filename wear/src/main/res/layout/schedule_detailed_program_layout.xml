@@ -25,6 +25,7 @@
             android:layout_marginBottom="8dp"
             android:text="08.40 - 10.30"
             android:textSize="12sp"
+            android:textColor="@color/my_white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/separatorView"
@@ -34,15 +35,30 @@
             android:id="@+id/classNameTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="8dp"
-            android:text="CS301 - FENS G077"
+            android:text="CS301 - Algorithms"
             android:textAlignment="textStart"
+            android:textColor="@color/my_white"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/separatorView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/my_white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/separatorView" />
 
         <View
             android:id="@+id/separatorView"

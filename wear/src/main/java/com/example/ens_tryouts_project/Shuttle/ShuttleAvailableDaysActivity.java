@@ -35,7 +35,7 @@ public class ShuttleAvailableDaysActivity extends AppCompatActivity implements S
         theDestinationObject = (ShuttleClass) intentSerial.getSerializableExtra("theDestinationObject");
 
         if(theDestinationObject != null){
-            String header = theDestinationObject.getRoute_name_eng() + " - Avail. Days";
+            String header = theDestinationObject.getRoute_name_eng();// + " - Avail. Days";
             binding.availableDaysTextView.setText(header);
 
             availableDaysArray = new ArrayList<>();
