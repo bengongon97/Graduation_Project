@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8fbc8f">
+    android:background="@color/android_like_blue">
 
     <View
         android:id="@+id/firstSeparatorView"
         android:layout_width="0dp"
         android:layout_height="3dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,9 +23,12 @@
         android:id="@+id/transportationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="Transportation"
-        android:textColor="@color/black"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Transportation\n x₺"
+        android:textAlignment="center"
+        android:textColor="@color/my_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,21 +38,24 @@
         android:layout_width="0dp"
         android:layout_height="3dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="8dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/firstSeparatorView" />
 
     <TextView
         android:id="@+id/foodTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Food"
-        android:textColor="@color/black"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Food\nx₺"
+        android:textAlignment="center"
+        android:textColor="@color/my_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstSeparatorView" />
@@ -58,12 +64,16 @@
         android:id="@+id/printTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Print"
-        android:textColor="@color/black"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Print\nx₺"
+        android:textAlignment="center"
+        android:textColor="@color/my_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/secondSeparatorView"
-        app:layout_constraintVertical_bias="0.272" />
+        app:layout_constraintVertical_bias="0.687" />
 </androidx.constraintlayout.widget.ConstraintLayout>

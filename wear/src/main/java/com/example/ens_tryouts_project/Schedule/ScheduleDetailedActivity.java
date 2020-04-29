@@ -9,6 +9,8 @@ import androidx.wear.widget.WearableRecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +35,7 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
     ScheduleDetailedAdapter myAdapter;
     RecyclerView detailsRecyclerView;
     List<String> tmp = new ArrayList<>();
+    ProgressBar indeterminateBar3;
     ScheduleDaysSubClass tryout = new ScheduleDaysSubClass(tmp,tmp,tmp,tmp,tmp,tmp,tmp,0);
 
     @Override
@@ -47,15 +50,16 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
         if (theDay != null)
             dayTextView.setText(theDay);
 
+        indeterminateBar3 = findViewById(R.id.indeterminateBar3);
 
         RippleAPIService service = RetrofitClientInstance.getRetrofitInstance().create(RippleAPIService.class);
+        indeterminateBar3.setVisibility(View.VISIBLE);
         Call<Map<String, Object>> call = service.scheduleCall();
 
         call.enqueue(new Callback<Map<String, Object>>() {
             @Override
             public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
-                //progressBar.dismiss();
-
+                indeterminateBar3.setVisibility(View.GONE);
                 if (response.isSuccessful()) {
                     weeklySchedule = response.body();
                     if (weeklySchedule != null) {
@@ -108,7 +112,7 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Map<String, Object>> call, Throwable t) {
                 //Call failed.
-                //progressBar.dismiss();
+                indeterminateBar3.setVisibility(View.GONE);
                 Toast.makeText(ScheduleDetailedActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });

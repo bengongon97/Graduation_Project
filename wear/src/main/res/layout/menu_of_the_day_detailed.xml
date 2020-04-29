@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/oval_layout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,6 +24,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Mercimek Çorba"
+            android:textAllCaps="true"
+            android:textColor="@color/android_like_blue"
             android:textSize="10sp"
             app:layout_constraintEnd_toStartOf="@+id/calorieInfoTextView"
             app:layout_constraintHorizontal_bias="0.0"
@@ -36,13 +40,13 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:text="Öğlen, Akşam vs"
+            android:textColor="@color/android_like_blue"
             android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/calorieInfoTextView"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mealNameTextView"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/mealNameTextView" />
 
         <TextView
             android:id="@+id/calorieInfoTextView"
@@ -50,24 +54,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
             android:text="Calories"
+            android:textColor="@color/android_like_blue"
             android:textSize="10sp"
-            app:layout_constraintBottom_toTopOf="@+id/view2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,7 +54,6 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
 
     @Override
     public void onBindViewHolder(@NonNull final ScheduleAdapter.ScheduleView holder, int position) {
-
         holder.textTextView.setText(daysOfTheWeek.get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

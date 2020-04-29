@@ -2,6 +2,7 @@ package com.example.ens_tryouts_project.Shuttle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.wear.widget.WearableLinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -104,7 +105,9 @@ public class ShuttleHoursActivity extends AppCompatActivity {
                 }
             }
         }
-        binding.shuttleDetailsRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        binding.shuttleDetailsRecyclerView.setAdapter(myShuttleDaysAdapter);
+
+        //binding.wearShuttleHourRecyclerView.setEdgeItemsCenteringEnabled(true);
+        binding.wearShuttleHourRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleHoursActivity.this));
+        binding.wearShuttleHourRecyclerView.setAdapter(myShuttleDaysAdapter);
     }
 }

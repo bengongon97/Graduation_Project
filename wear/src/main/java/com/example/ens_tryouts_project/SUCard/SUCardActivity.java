@@ -42,9 +42,9 @@ public class SUCardActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     suCardResponse = response.body();
 
-                    binding.foodTextView.setText(suCardResponse.get(0).getMeal().getSum());
-                    binding.printTextView.setText(suCardResponse.get(0).getPrint().getSum());
-                    binding.transportationTextView.setText(suCardResponse.get(0).getTransport().getSum());
+                    binding.foodTextView.setText("Food\n" + suCardResponse.get(0).getMeal().getSum() + "₺");
+                    binding.printTextView.setText("Print\n" + suCardResponse.get(0).getPrint().getSum() + "₺");
+                    binding.transportationTextView.setText("Transportation\n" + suCardResponse.get(0).getTransport().getSum() + "₺");
                 } else {
                     Toast.makeText(SUCardActivity.this, "Unsuccessful response", Toast.LENGTH_LONG).show();
                 }

@@ -1,11 +1,15 @@
 package com.example.ens_tryouts_project.Shuttle;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.ens_tryouts_project.R;
+import com.example.ens_tryouts_project.Schedule.ScheduleAdapter;
 
 import java.util.List;
 
@@ -30,23 +34,24 @@ public class ShuttleAdapter extends RecyclerView.Adapter<ShuttleAdapter.ShuttleV
     @NonNull
     @Override
     public ShuttleAdapter.ShuttleView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = new TextView(parent.getContext());
-        return new ShuttleView(view);
+        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.classic_text_view_layout, parent, false);
+        return new ShuttleAdapter.ShuttleView(layoutView);
     }
 
     class ShuttleView extends RecyclerView.ViewHolder {
-        TextView textView;
+        TextView  textTextView;
 
         public ShuttleView(View itemView) {
 
             super(itemView);
-            textView = (TextView) itemView;
+
+            textTextView = itemView.findViewById(R.id.textTextView);
         }
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ShuttleAdapter.ShuttleView holder, int position) {
-        holder.textView.setText(destinationList.get(position));
+        holder.textTextView.setText(destinationList.get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -52,7 +52,6 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapt
         ScheduleAdapter myAdapter = new ScheduleAdapter(ScheduleActivity.this, daysOfTheWeek);
         wearableRecyclerView.setAdapter(myAdapter);
         myAdapter.setOnItemClickListener(ScheduleActivity.this);
-
     }
 
     @Override

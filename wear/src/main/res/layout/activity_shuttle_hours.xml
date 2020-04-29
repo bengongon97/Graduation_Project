@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/android_like_blue">
 
     <TextView
         android:id="@+id/destinationCampusTextView"
@@ -14,25 +15,25 @@
         android:layout_marginTop="16dp"
         android:text="Dest - Campus"
         android:textAlignment="center"
+        android:textColor="@color/my_white"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/switchImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/shuttleDetailsRecyclerView"
+    <androidx.wear.widget.WearableRecyclerView
+        android:id="@+id/wear_shuttle_hour_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/destinationCampusTextView">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@+id/destinationCampusTextView" />
 
     <ImageView
         android:id="@+id/switchImageView"

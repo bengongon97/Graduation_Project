@@ -46,6 +46,7 @@ public class ScheduleDetailedAdapter extends RecyclerView.Adapter<ScheduleDetail
         if(theClassOfToday == null || theClassOfToday.getClassCodeAndName().size() == 0){
             holder.classNameTextView.setText("There is no class today.");
             holder.classHourTextView.setText("No hour can be found.");
+            holder.locationTextView.setText("");
         }
         else{
 
