@@ -51,7 +51,7 @@ public class MenuOfTheDayAdapter extends RecyclerView.Adapter<MenuOfTheDayAdapte
         MenuOfTheDayClass myMenuItem = menuArray.get(holder.getAdapterPosition());
 
         if(myMenuItem.getMeal() != null)
-            holder.mealNameTextView.setText(myMenuItem.getMeal());
+            holder.mealNameTextView.setText(myMenuItem.getMeal_en());
 
         //no nullity condition for these, if needed, add one.
         if(myMenuItem.isDinner() && myMenuItem.isLunch())

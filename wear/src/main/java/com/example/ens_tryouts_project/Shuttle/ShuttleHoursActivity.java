@@ -2,6 +2,7 @@ package com.example.ens_tryouts_project.Shuttle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.wear.widget.WearableLinearLayoutManager;
 
 import android.content.Intent;
@@ -56,6 +57,29 @@ public class ShuttleHoursActivity extends AppCompatActivity {
         });
     }
 
+    public static class CustomScrollingLayoutCallback extends WearableLinearLayoutManager.LayoutCallback {
+        /** How much should we scale the icon at most. */
+        private static final float MAX_ICON_PROGRESS = 1f;
+
+        private float progressToCenter;
+
+        @Override
+        public void onLayoutFinished(View child, RecyclerView parent) {
+
+            // Figure out % progress from top to bottom
+            float centerOffset = ((float) child.getHeight() / 2.0f) / (float) parent.getHeight();
+            float yRelativeToCenterOffset = (child.getY() / parent.getHeight()) + centerOffset;
+
+            // Normalize for center
+            progressToCenter = Math.abs(0.5f - yRelativeToCenterOffset);
+            // Adjust to the maximum scale
+            progressToCenter = Math.min(progressToCenter, MAX_ICON_PROGRESS);
+
+            child.setScaleX(1 - progressToCenter);
+            child.setScaleY(1 - progressToCenter);
+        }
+    }
+
     public void converterFactoryFromToTo(String theOnClickedDay, int flag){
         if(flag == 0){ //To campus from destination (also default)
             if(theOnClickedDay != null && !theOnClickedDay.equals("")){ //it is a special occasion
@@ -100,14 +124,16 @@ public class ShuttleHoursActivity extends AppCompatActivity {
                 }
                 else{
                     List<String> tmpList = new ArrayList<>();
-                    tmpList.add("No shuttle buses found.");
+                    tmpList.add("No shuttle found.");
                     myShuttleDaysAdapter = new ShuttleAdapter(tmpList);
                 }
             }
         }
 
         //binding.wearShuttleHourRecyclerView.setEdgeItemsCenteringEnabled(true);
-        binding.wearShuttleHourRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleHoursActivity.this));
+        CustomScrollingLayoutCallback customScrollingLayoutCallback = new CustomScrollingLayoutCallback();
+        binding.wearShuttleHourRecyclerView.setLayoutManager(new WearableLinearLayoutManager(this, customScrollingLayoutCallback));
+        //binding.wearShuttleHourRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleHoursActivity.this));
         binding.wearShuttleHourRecyclerView.setAdapter(myShuttleDaysAdapter);
     }
 }

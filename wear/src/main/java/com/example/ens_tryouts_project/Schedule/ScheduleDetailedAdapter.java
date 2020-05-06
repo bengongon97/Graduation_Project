@@ -61,7 +61,7 @@ public class ScheduleDetailedAdapter extends RecyclerView.Adapter<ScheduleDetail
 
             for(int i = 0; i < begintime.size(); i++){
                 alltimes.add(begintime.get(i) + " - " + endtime.get(i));
-                alllocations.add(buildingcode.get(i) + roomcode.get(i));
+                alllocations.add(buildingcode.get(i) + " " + roomcode.get(i));
             }
 
             holder.classNameTextView.setText(uniqueall.get(holder.getAdapterPosition()));

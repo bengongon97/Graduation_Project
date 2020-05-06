@@ -64,7 +64,9 @@ public class ShuttleAvailableDaysActivity extends AppCompatActivity implements S
         ShuttleAdapter myShuttleDaysAdapter = new ShuttleAdapter(availableDaysArray);
 
         binding.wearAvailableDaysRecyclerView.setEdgeItemsCenteringEnabled(true);
-        binding.wearAvailableDaysRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleAvailableDaysActivity.this));
+        //binding.wearAvailableDaysRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleAvailableDaysActivity.this));
+        ShuttleHoursActivity.CustomScrollingLayoutCallback customScrollingLayoutCallback = new ShuttleHoursActivity.CustomScrollingLayoutCallback();
+        binding.wearAvailableDaysRecyclerView.setLayoutManager(new WearableLinearLayoutManager(this, customScrollingLayoutCallback));
         binding.wearAvailableDaysRecyclerView.setAdapter(myShuttleDaysAdapter);
         myShuttleDaysAdapter.setOnItemClickListener(ShuttleAvailableDaysActivity.this);
     }

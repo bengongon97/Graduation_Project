@@ -59,7 +59,14 @@ public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter
                     myShuttleAdapter = new ShuttleAdapter(destinationList);
 
                     binding.wearShuttleRecyclerView.setEdgeItemsCenteringEnabled(true);
-                    binding.wearShuttleRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleActivity.this));
+                    //binding.wearShuttleRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleActivity.this));
+                    ShuttleHoursActivity.CustomScrollingLayoutCallback customScrollingLayoutCallback = new ShuttleHoursActivity.CustomScrollingLayoutCallback();
+                    binding.wearShuttleRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleActivity.this, customScrollingLayoutCallback));
+/* HERE MIGHT BE ENABLED, IF IT IS WANTED TO CUSTOMIZE.
+                    binding.wearShuttleRecyclerView.setCircularScrollingGestureEnabled(true);
+                    binding.wearShuttleRecyclerView.setBezelFraction(0.5f);
+                    binding.wearShuttleRecyclerView.setScrollDegreesPerScreen(180);
+*/
                     binding.wearShuttleRecyclerView.setAdapter(myShuttleAdapter);
                     myShuttleAdapter.setOnItemClickListener(ShuttleActivity.this);
                 } else {
