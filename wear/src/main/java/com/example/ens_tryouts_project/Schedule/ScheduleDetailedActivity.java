@@ -93,10 +93,8 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
                                 }
                                 tryout.toString();
 
-                                WearableRecyclerView wear_detail_recycler_view = findViewById(R.id.wear_detail_recycler_view);
-                                // To align the edge children (first and last) with the center of the screen
-                                wear_detail_recycler_view.setEdgeItemsCenteringEnabled(true);
-                                wear_detail_recycler_view.setLayoutManager(new WearableLinearLayoutManager(ScheduleDetailedActivity.this));
+                                RecyclerView wear_detail_recycler_view = findViewById(R.id.wear_detail_recycler_view);
+                                wear_detail_recycler_view.setLayoutManager(new LinearLayoutManager(ScheduleDetailedActivity.this));
 
                                 ScheduleDetailedAdapter myAdapter = new ScheduleDetailedAdapter(tryout);
                                 wear_detail_recycler_view.setAdapter(myAdapter);

@@ -64,7 +64,7 @@ public class MenuOfTheDayAdapter extends RecyclerView.Adapter<MenuOfTheDayAdapte
             holder.tabldotTextView.setText("Dinner");
 
         if(myMenuItem.getCalorie() != null)
-            holder.calorieInfoTextView.setText(myMenuItem.getCalorie());
+            holder.calorieInfoTextView.setText("Cal: " + myMenuItem.getCalorie());
     }
 
     @Override
