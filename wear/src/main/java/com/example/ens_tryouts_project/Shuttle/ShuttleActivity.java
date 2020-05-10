@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.ens_tryouts_project.Network.RetrofitClientInstance;
 import com.example.ens_tryouts_project.Network.RippleAPIService;
+import com.example.ens_tryouts_project.R;
 import com.example.ens_tryouts_project.Schedule.ScheduleActivity;
 import com.example.ens_tryouts_project.Schedule.ScheduleAdapter;
 import com.example.ens_tryouts_project.databinding.ActivityShuttleBinding;
@@ -52,33 +53,33 @@ public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter
                     actualList = response.body();
                     if(actualList != null){
                         destinationList = destinationListCalculator(actualList);
-                        //Toast.makeText(ShuttleActivity.this, "Hello", Toast.LENGTH_LONG).show();
                     }
                     else{
-                        destinationList.add("Trouble finding any available destinations.");
+                        destinationList.add(getString(R.string.no_destination_found));
                     }
                     myShuttleAdapter = new ShuttleAdapter(destinationList);
 
                     binding.wearShuttleRecyclerView.setEdgeItemsCenteringEnabled(true);
-                    //binding.wearShuttleRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleActivity.this));
                     ShuttleHoursActivity.CustomScrollingLayoutCallback customScrollingLayoutCallback = new ShuttleHoursActivity.CustomScrollingLayoutCallback();
                     binding.wearShuttleRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleActivity.this, customScrollingLayoutCallback));
-                    /* HERE MIGHT BE ENABLED, IF IT IS WANTED TO CUSTOMIZE.
+
+                    /* HERE, THESE MIGHT BE UNCOMMENTED, IF IT IS WANTED TO CUSTOMIZE.
                     binding.wearShuttleRecyclerView.setCircularScrollingGestureEnabled(true);
                     binding.wearShuttleRecyclerView.setBezelFraction(0.5f);
                     binding.wearShuttleRecyclerView.setScrollDegreesPerScreen(180);
                     */
+
                     binding.wearShuttleRecyclerView.setAdapter(myShuttleAdapter);
                     myShuttleAdapter.setOnItemClickListener(ShuttleActivity.this);
                 } else {
-                    Toast.makeText(ShuttleActivity.this, "Unsuccessful response", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ShuttleActivity.this, getString(R.string.unsuccessful_response), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<List<ShuttleClass>> call, Throwable t) {
                 binding.indeterminateBar.setVisibility(View.GONE);
-                Toast.makeText(ShuttleActivity.this, t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(ShuttleActivity.this, getString(R.string.call_failed), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -94,8 +95,6 @@ public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter
 
     @Override
     public void onItemClick(int position) {
-        //Toast.makeText(this,""+ destinationList.get(position),Toast.LENGTH_SHORT).show();
-
         Intent intent = new Intent(this, ShuttleAvailableDaysActivity.class);
         intent.putExtra("theDestinationObject", actualList.get(position));
         startActivity(intent);

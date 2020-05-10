@@ -4,19 +4,24 @@
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
-    <string name="call_failed">We could not load the values, please try again.</string>
 
+    <!-- General string files -->
+    <string name="call_failed">We could not load the values, please try again.</string>
+    <string name="unsuccessful_response">There has been an error in our side. Please try again.</string>
+    <!-- SUCard string files -->
     <string name="food">Food\n</string>
     <string name="print">Print\n</string>
     <string name="transportation">Transportation\n</string>
-
-    <string name="unsuccessful_response">There has been an error in our side. Please try again.</string>
-
     <string name="try_again">Please try again.</string>
+    <!-- Shuttle string files -->
+    <string name="no_destination_found">"Trouble finding any available destinations."</string>
+    <string name="monday">Monday</string>
+    <string name="friday">Friday</string>
+    <string name="weekdays">Weekdays</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
 
-    <string name="a">Please try again.</string>
-    <string name="asdsa">Please try again.</string>
-    <string name="asds">Please try again.</string>
+
     <string name="asdasd">Please try again.</string>
 
 

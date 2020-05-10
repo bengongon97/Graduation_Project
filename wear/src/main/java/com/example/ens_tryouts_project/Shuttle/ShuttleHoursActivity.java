@@ -130,10 +130,9 @@ public class ShuttleHoursActivity extends AppCompatActivity {
             }
         }
 
-        //binding.wearShuttleHourRecyclerView.setEdgeItemsCenteringEnabled(true);
+        //binding.wearShuttleHourRecyclerView.setEdgeItemsCenteringEnabled(true); //if you want to change this later, just uncomment it align with the center.
         CustomScrollingLayoutCallback customScrollingLayoutCallback = new CustomScrollingLayoutCallback();
         binding.wearShuttleHourRecyclerView.setLayoutManager(new WearableLinearLayoutManager(this, customScrollingLayoutCallback));
-        //binding.wearShuttleHourRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleHoursActivity.this));
         binding.wearShuttleHourRecyclerView.setAdapter(myShuttleDaysAdapter);
     }
 }

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ens_tryouts_project.R;
 import com.example.ens_tryouts_project.databinding.ActivityShuttleAvailableDaysBinding;
 
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ public class ShuttleAvailableDaysActivity extends AppCompatActivity implements S
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_shuttle_available_days);
         binding = ActivityShuttleAvailableDaysBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
@@ -43,20 +43,20 @@ public class ShuttleAvailableDaysActivity extends AppCompatActivity implements S
 
             //processing exceptions
             if(theDestinationObject.getMonday() != null){
-                availableDaysArray.add("Monday");
+                availableDaysArray.add(getString(R.string.monday));
             }
             if(theDestinationObject.getFriday() != null){ //making this else if may provide a very slight performance increase but it is omitted to avoid possible errors.
-                availableDaysArray.add("Friday");
+                availableDaysArray.add(getString(R.string.friday));
             }
             //processing expected values
             if(theDestinationObject.getWeekdays() != null){
-                availableDaysArray.add("Weekdays");
+                availableDaysArray.add(getString(R.string.weekdays));
             }
             if(theDestinationObject.getSaturday() != null){
-                availableDaysArray.add("Saturday");
+                availableDaysArray.add(getString(R.string.saturday));
             }
             if(theDestinationObject.getSunday() != null){
-                availableDaysArray.add("Sunday");
+                availableDaysArray.add(getString(R.string.sunday));
             }
         }
 
@@ -64,7 +64,6 @@ public class ShuttleAvailableDaysActivity extends AppCompatActivity implements S
         ShuttleAdapter myShuttleDaysAdapter = new ShuttleAdapter(availableDaysArray);
 
         binding.wearAvailableDaysRecyclerView.setEdgeItemsCenteringEnabled(true);
-        //binding.wearAvailableDaysRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleAvailableDaysActivity.this));
         ShuttleHoursActivity.CustomScrollingLayoutCallback customScrollingLayoutCallback = new ShuttleHoursActivity.CustomScrollingLayoutCallback();
         binding.wearAvailableDaysRecyclerView.setLayoutManager(new WearableLinearLayoutManager(this, customScrollingLayoutCallback));
         binding.wearAvailableDaysRecyclerView.setAdapter(myShuttleDaysAdapter);
@@ -73,8 +72,6 @@ public class ShuttleAvailableDaysActivity extends AppCompatActivity implements S
 
     @Override
     public void onItemClick(int position) {
-        //Toast.makeText(this,""+ availableDaysArray.get(position),Toast.LENGTH_SHORT).show();
-
         intent.putExtra("theDestinationObject", theDestinationObject);
         intent.putExtra("theClickedDay", availableDaysArray.get(position));
         startActivity(intent);
