@@ -32,7 +32,6 @@ public class MenuOfTheDayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_menu_of_the_day);
         binding = ActivityMenuOfTheDayBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
@@ -51,21 +50,20 @@ public class MenuOfTheDayActivity extends AppCompatActivity {
             public void onResponse(Call<List<MenuOfTheDayClass>> call, Response<List<MenuOfTheDayClass>> response) {
                 binding.indeterminateBar2.setVisibility(View.GONE);
                 if (response.isSuccessful()) {
-                    //Toast.makeText(MenuOfTheDayActivity.this, "We got your results!", Toast.LENGTH_LONG).show();
                     menuArray = response.body();
 
                     myMenuAdapter = new MenuOfTheDayAdapter(MenuOfTheDayActivity.this, menuArray);
                     binding.menuRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     binding.menuRecyclerView.setAdapter(myMenuAdapter);
                 } else {
-                    Toast.makeText(MenuOfTheDayActivity.this, "Unsuccessful response", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MenuOfTheDayActivity.this, getString(R.string.unsuccessful_response), Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<List<MenuOfTheDayClass>> call, Throwable t) {
                 binding.indeterminateBar2.setVisibility(View.GONE);
-                Toast.makeText(MenuOfTheDayActivity.this, "Call failed, please try again.", Toast.LENGTH_LONG).show();
+                Toast.makeText(MenuOfTheDayActivity.this, getString(R.string.call_failed), Toast.LENGTH_LONG).show();
             }
         });
     }
