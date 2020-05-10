@@ -23,4 +23,5 @@
     <string name="no_shuttle_found">Servis bulunamadı.</string>
     <string name="no_class_today">Bugün bir dersiniz yok.</string>
     <string name="no_hours">Herhangi bir saat bulunamadı.</string>
+    <string name="warning_message">Uygulama zaten Türkçe.</string>
 </resources>

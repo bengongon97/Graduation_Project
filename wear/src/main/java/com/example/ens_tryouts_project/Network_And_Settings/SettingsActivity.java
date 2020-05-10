@@ -20,8 +20,6 @@ import java.util.Locale;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    public SharedPreferences sharedpreferences;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +63,7 @@ public class SettingsActivity extends AppCompatActivity {
                         Toast.makeText(SettingsActivity.this, getString(R.string.lang_chg_successful), Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        Toast.makeText(SettingsActivity.this, "Your app is already English.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SettingsActivity.this, getString(R.string.warning_message), Toast.LENGTH_SHORT).show();
                     }
                 }
                 else if(radioButton.getText().equals("Türkçe")){
@@ -92,7 +90,7 @@ public class SettingsActivity extends AppCompatActivity {
                         Toast.makeText(SettingsActivity.this, getString(R.string.lang_chg_successful), Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        Toast.makeText(SettingsActivity.this, "Uygulama zaten Türkçe.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SettingsActivity.this, getString(R.string.warning_message), Toast.LENGTH_SHORT).show();
                     }
                 }
             }

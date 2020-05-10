@@ -31,6 +31,7 @@
     <string name="lang_settings">Language Settings</string>
     <string name="change_lang">Change Language</string>
     <string name="lang_chg_successful">Language is set to English</string>
+    <string name="warning_message">Your app is already English.</string>
     <!-- Menu string files -->
     <string name="menu_header">Menu Of The Day</string>
 
