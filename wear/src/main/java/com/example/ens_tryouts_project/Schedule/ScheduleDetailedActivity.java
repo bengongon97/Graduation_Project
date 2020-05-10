@@ -32,8 +32,6 @@ import retrofit2.Response;
 public class ScheduleDetailedActivity extends AppCompatActivity {
 
     Map<String, Object> weeklySchedule;
-    ScheduleDetailedAdapter myAdapter;
-    RecyclerView detailsRecyclerView;
     List<String> tmp = new ArrayList<>();
     ProgressBar indeterminateBar3;
     ScheduleDaysSubClass tryout = new ScheduleDaysSubClass(tmp,tmp,tmp,tmp,tmp,tmp,tmp,0);
@@ -103,19 +101,16 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
                     }
                 }
                 else {
-                    Toast.makeText(ScheduleDetailedActivity.this, "Unsuccessful response", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScheduleDetailedActivity.this, getString(R.string.unsuccessful_response), Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                //Call failed.
                 indeterminateBar3.setVisibility(View.GONE);
-                Toast.makeText(ScheduleDetailedActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ScheduleDetailedActivity.this, getString(R.string.call_failed), Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 }
 

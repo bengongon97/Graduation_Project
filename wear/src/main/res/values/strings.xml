@@ -20,9 +20,14 @@
     <string name="weekdays">Weekdays</string>
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
+    <!-- Schedule string files -->
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
 
-
+    <string name="asdas">Please try again.</string>
     <string name="asdasd">Please try again.</string>
+    <string name="asdad">Please try again.</string>
 
 
 </resources>

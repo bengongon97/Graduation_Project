@@ -24,27 +24,22 @@ import retrofit2.Response;
 
 public class ScheduleActivity extends AppCompatActivity implements ScheduleAdapter.OnItemClickListener {
 
-    private WearableRecyclerView wearableRecyclerView;
-
     List<String> daysOfTheWeek = new ArrayList<>();
-    Map<String, Object> weeklySchedule;
-    List<String> tmp = new ArrayList<>();
-    ScheduleDaysSubClass tryout = new ScheduleDaysSubClass(tmp,tmp,tmp,tmp,tmp,tmp,tmp,0);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
 
-        daysOfTheWeek.add("Monday");
-        daysOfTheWeek.add("Tuesday");
-        daysOfTheWeek.add("Wednesday");
-        daysOfTheWeek.add("Thursday");
-        daysOfTheWeek.add("Friday");
-        daysOfTheWeek.add("Saturday");
-        daysOfTheWeek.add("Sunday");
+        daysOfTheWeek.add(getString(R.string.monday));
+        daysOfTheWeek.add(getString(R.string.tuesday));
+        daysOfTheWeek.add(getString(R.string.wednesday));
+        daysOfTheWeek.add(getString(R.string.thursday));
+        daysOfTheWeek.add(getString(R.string.friday));
+        daysOfTheWeek.add(getString(R.string.saturday));
+        daysOfTheWeek.add(getString(R.string.sunday));
 
-        wearableRecyclerView = findViewById(R.id.wear_detail_recycler_view);
+        WearableRecyclerView wearableRecyclerView = findViewById(R.id.wear_detail_recycler_view);
         // To align the edge children (first and last) with the center of the screen
         wearableRecyclerView.setEdgeItemsCenteringEnabled(true);
         wearableRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ScheduleActivity.this));
