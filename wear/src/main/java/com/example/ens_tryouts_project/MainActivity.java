@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.ens_tryouts_project.MenuOfTheDay.MenuOfTheDayActivity;
+import com.example.ens_tryouts_project.Network_And_Settings.SettingsActivity;
 import com.example.ens_tryouts_project.SUCard.SUCardActivity;
 import com.example.ens_tryouts_project.Schedule.ScheduleActivity;
 import com.example.ens_tryouts_project.Shuttle.ShuttleActivity;
@@ -53,6 +54,15 @@ public class MainActivity extends WearableActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SUCardActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView settingsImage = findViewById(R.id.settingsImage);
+        settingsImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });

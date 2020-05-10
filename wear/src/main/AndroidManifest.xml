@@ -13,7 +13,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".SUCard.SUCardActivity"></activity>
+        <activity android:name=".Network_And_Settings.SettingsActivity"></activity>
+        <activity android:name=".SUCard.SUCardActivity" />
         <activity android:name=".Shuttle.ShuttleHoursActivity" />
         <activity android:name=".Shuttle.ShuttleAvailableDaysActivity" />
         <activity android:name=".Shuttle.ShuttleActivity" />

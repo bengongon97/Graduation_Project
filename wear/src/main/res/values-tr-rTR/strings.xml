@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ENS Mezuniyet Projesi</string>
+    <string name="call_failed">Gerekli bilgili yükleyemedik, lütfen tekrar deneyin.</string>
+    <string name="unsuccessful_response">Bizim tarafımızda bir hata oluştu. Lütfen tekrar deneyin.</string>
+    <string name="food">Yemek\n</string>
+    <string name="print">Yazıcı\n</string>
+    <string name="transportation">Ulaşım\n</string>
+    <string name="try_again">Lütfen tekrar deneyin.</string>
+    <string name="no_destination_found">Herhangi bir istikamet bulamadık.</string>
+    <string name="monday">Pazartesi</string>
+    <string name="friday">Cuma</string>
+    <string name="weekdays">Hafta İçi</string>
+    <string name="saturday">Cumartesi</string>
+    <string name="sunday">Pazar</string>
+    <string name="tuesday">Salı</string>
+    <string name="wednesday">Çarşamba</string>
+    <string name="thursday">Perşembe</string>
+    <string name="lang_settings">Lisan Ayarları</string>
+    <string name="change_lang">Lisanı Değiştir</string>
+    <string name="menu_header">Günün Menüsü</string>
+    <string name="lang_chg_successful">Lisan Türkçeye ayarlandı</string>
+    <string name="no_shuttle_found">Servis bulunamadı.</string>
+    <string name="no_class_today">Bugün bir dersiniz yok.</string>
+    <string name="no_hours">Herhangi bir saat bulunamadı.</string>
+</resources>

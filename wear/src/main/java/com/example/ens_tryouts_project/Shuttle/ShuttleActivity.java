@@ -1,26 +1,21 @@
 package com.example.ens_tryouts_project.Shuttle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.wear.widget.WearableLinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.ens_tryouts_project.Network.RetrofitClientInstance;
-import com.example.ens_tryouts_project.Network.RippleAPIService;
+import com.example.ens_tryouts_project.Network_And_Settings.RetrofitClientInstance;
+import com.example.ens_tryouts_project.Network_And_Settings.RippleAPIService;
 import com.example.ens_tryouts_project.R;
-import com.example.ens_tryouts_project.Schedule.ScheduleActivity;
-import com.example.ens_tryouts_project.Schedule.ScheduleAdapter;
 import com.example.ens_tryouts_project.databinding.ActivityShuttleBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.Headers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

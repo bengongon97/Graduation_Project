@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/diningImage"
-        android:layout_width="84dp"
-        android:layout_height="220dp"
+        android:layout_width="79dp"
+        android:layout_height="87dp"
         android:layout_marginBottom="8dp"
         android:src="@drawable/ic_dining"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,14 +19,14 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.833"
+        app:layout_constraintVertical_bias="0.531"
         tools:layout_conversion_absoluteHeight="89dp"
         tools:layout_conversion_absoluteWidth="75dp" />
 
     <ImageView
         android:id="@+id/moneyImage"
-        android:layout_width="194dp"
-        android:layout_height="75dp"
+        android:layout_width="88dp"
+        android:layout_height="71dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_money"
@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mySUImage"
-        app:layout_constraintVertical_bias="0.428"
+        app:layout_constraintVertical_bias="0.111"
         tools:layout_conversion_absoluteHeight="89dp"
         tools:layout_conversion_absoluteWidth="75dp" />
 
@@ -42,33 +42,25 @@
         android:id="@+id/calenderImage"
         android:layout_width="79dp"
         android:layout_height="60dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="80dp"
         android:src="@drawable/ic_calender"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/mySUImage"
+        app:layout_constraintBottom_toTopOf="@+id/mySUImage"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.506"
+        app:layout_constraintVertical_bias="0.533"
         tools:layout_conversion_absoluteHeight="92dp"
         tools:layout_conversion_absoluteWidth="73dp" />
 
     <ImageView
         android:id="@+id/busImage"
-        android:layout_width="185dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="75dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="88dp"
         android:src="@drawable/ic_bus"
-        app:layout_constraintBottom_toTopOf="@+id/mySUImage"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/mySUImage"
         tools:layout_conversion_absoluteHeight="88dp"
         tools:layout_conversion_absoluteWidth="76dp" />
 
@@ -85,7 +77,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.506"
         tools:layout_conversion_absoluteHeight="129dp"
         tools:layout_conversion_absoluteWidth="163dp" />
+
+    <ImageView
+        android:id="@+id/settingsImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/ic_settings_24px"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/busImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toEndOf="@+id/calenderImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354" />
 </androidx.constraintlayout.widget.ConstraintLayout>

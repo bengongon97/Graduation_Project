@@ -1,4 +1,4 @@
-package com.example.ens_tryouts_project.Network;
+package com.example.ens_tryouts_project.Network_And_Settings;
 
 import com.example.ens_tryouts_project.MenuOfTheDay.MenuOfTheDayClass;
 import com.example.ens_tryouts_project.SUCard.SUCardClass;

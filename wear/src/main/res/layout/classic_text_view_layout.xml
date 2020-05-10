@@ -15,7 +15,7 @@
         android:text="Display Menu Item Here"
         android:textAlignment="viewStart"
         android:textColor="@color/my_white"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.119"

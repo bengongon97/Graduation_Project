@@ -2,17 +2,13 @@ package com.example.ens_tryouts_project.MenuOfTheDay;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ens_tryouts_project.Network.RetrofitClientInstance;
-import com.example.ens_tryouts_project.Network.RippleAPIService;
+import com.example.ens_tryouts_project.Network_And_Settings.RetrofitClientInstance;
+import com.example.ens_tryouts_project.Network_And_Settings.RippleAPIService;
 import com.example.ens_tryouts_project.R;
 import com.example.ens_tryouts_project.databinding.ActivityMenuOfTheDayBinding;
 
@@ -36,6 +32,8 @@ public class MenuOfTheDayActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        binding.menuTextView.setText(getString(R.string.menu_header));
+
         RippleAPIService service = RetrofitClientInstance.getRetrofitInstance().create(RippleAPIService.class);
         binding.indeterminateBar2.setVisibility(View.VISIBLE);
         callRequest(service);
@@ -52,7 +50,8 @@ public class MenuOfTheDayActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     menuArray = response.body();
 
-                    myMenuAdapter = new MenuOfTheDayAdapter(MenuOfTheDayActivity.this, menuArray);
+                    String currentLang = getResources().getConfiguration().locale.getLanguage();
+                    myMenuAdapter = new MenuOfTheDayAdapter(MenuOfTheDayActivity.this, menuArray, currentLang);
                     binding.menuRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                     binding.menuRecyclerView.setAdapter(myMenuAdapter);
                 } else {

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.ens_tryouts_project.R;
 import com.example.ens_tryouts_project.databinding.ActivityShuttleHoursBinding;
 
 import java.util.ArrayList;
@@ -33,9 +34,17 @@ public class ShuttleHoursActivity extends AppCompatActivity {
         theDestinationObject = (ShuttleClass) intent.getSerializableExtra("theDestinationObject");
         final String theOnClickedDay = intent.getStringExtra("theClickedDay");
 
+        final String currentLang = getResources().getConfiguration().locale.getLanguage();
 
-        String headerTextView = "To " + theDestinationObject.getRoute_name_eng();
-        binding.destinationCampusTextView.setText(headerTextView); //Since it is the default, the name must be changed too.
+        if(currentLang.equals("en")){
+            String headerTextView = "To " + theDestinationObject.getRoute_name_eng();
+            binding.destinationCampusTextView.setText(headerTextView); //Since it is the default, the name must be changed too.
+        }
+        else if(currentLang.equals("tr")){
+            String headerTextView = theDestinationObject.getRoute_name_tr() + "e"; //-e, -a difference in Turkish should be fixed.
+            binding.destinationCampusTextView.setText(headerTextView); //Since it is the default, the name must be changed too.
+        }
+
         converterFactoryFromToTo(theOnClickedDay, flag);
 
         binding.switchImageView.setOnClickListener(new View.OnClickListener() {
@@ -43,14 +52,26 @@ public class ShuttleHoursActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(flag == 0){
                     flag = 1;
-                    String headerTextView = "To " + theDestinationObject.getRoute_name_eng();
-                    binding.destinationCampusTextView.setText(headerTextView);
+                    if(currentLang.equals("en")){
+                        String headerTextView = "To " + theDestinationObject.getRoute_name_eng();
+                        binding.destinationCampusTextView.setText(headerTextView); //Since it is the default, the name must be changed too.
+                    }
+                    else if(currentLang.equals("tr")){
+                        String headerTextView = theDestinationObject.getRoute_name_tr() + "e"; //-e, -a difference in Turkish should be fixed.
+                        binding.destinationCampusTextView.setText(headerTextView); //Since it is the default, the name must be changed too.
+                    }
                     converterFactoryFromToTo(theOnClickedDay, flag);
                 }
                 else if(flag == 1){
                     flag = 0;
-                    String headerTextView = "From " + theDestinationObject.getRoute_name_eng();
-                    binding.destinationCampusTextView.setText(headerTextView);
+                    if(currentLang.equals("en")){
+                        String headerTextView = "To " + theDestinationObject.getRoute_name_eng();
+                        binding.destinationCampusTextView.setText(headerTextView); //Since it is the default, the name must be changed too.
+                    }
+                    else if(currentLang.equals("tr")){
+                        String headerTextView = theDestinationObject.getRoute_name_tr() + "ten"; //-e, -a difference in Turkish should be fixed.
+                        binding.destinationCampusTextView.setText(headerTextView); //Since it is the default, the name must be changed too.
+                    }
                     converterFactoryFromToTo(theOnClickedDay, flag);
                 }
             }
@@ -83,54 +104,54 @@ public class ShuttleHoursActivity extends AppCompatActivity {
     public void converterFactoryFromToTo(String theOnClickedDay, int flag){
         if(flag == 0){ //To campus from destination (also default)
             if(theOnClickedDay != null && !theOnClickedDay.equals("")){ //it is a special occasion
-                if(theOnClickedDay.equals("Monday") && theDestinationObject.getMonday().getTo_campus() != null){
+                if(theOnClickedDay.equals(getString(R.string.monday)) && theDestinationObject.getMonday().getTo_campus() != null){
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getMonday().getTo_campus());
                 }
-                else if(theOnClickedDay.equals("Friday") && theDestinationObject.getFriday().getTo_campus() != null){
+                else if(theOnClickedDay.equals(getString(R.string.friday)) && theDestinationObject.getFriday().getTo_campus() != null){
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getFriday().getTo_campus());
                 }
-                else if(theOnClickedDay.equals("Weekdays") && theDestinationObject.getWeekdays().getTo_campus() != null){ //it is weekdays option
+                else if(theOnClickedDay.equals(getString(R.string.weekdays)) && theDestinationObject.getWeekdays().getTo_campus() != null){ //it is weekdays option
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getWeekdays().getTo_campus());
                 }
-                else if(theOnClickedDay.equals("Saturday") && theDestinationObject.getSaturday().getTo_campus() != null){ //it is saturday option
+                else if(theOnClickedDay.equals(getString(R.string.saturday)) && theDestinationObject.getSaturday().getTo_campus() != null){ //it is saturday option
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getSaturday().getTo_campus());
                 }
-                else if(theOnClickedDay.equals("Sunday") && theDestinationObject.getSunday().getTo_campus() != null){ //it is sunday option
+                else if(theOnClickedDay.equals(getString(R.string.sunday)) && theDestinationObject.getSunday().getTo_campus() != null){ //it is sunday option
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getSunday().getTo_campus());
                 }
                 else{
                     List<String> tmpList = new ArrayList<>();
-                    tmpList.add("No shuttle buses found.");
+                    tmpList.add(getString(R.string.no_shuttle_found));
                     myShuttleDaysAdapter = new ShuttleAdapter(tmpList);
                 }
             }
         }
         else if(flag == 1){ //From campus to destination
             if(theOnClickedDay != null && !theOnClickedDay.equals("")){ //it is a special occasion
-                if(theOnClickedDay.equals("Monday") && theDestinationObject.getMonday().getFrom_campus() != null){
+                if(theOnClickedDay.equals(getString(R.string.monday)) && theDestinationObject.getMonday().getFrom_campus() != null){
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getMonday().getFrom_campus());
                 }
-                else if(theOnClickedDay.equals("Friday") && theDestinationObject.getFriday().getFrom_campus() != null){
+                else if(theOnClickedDay.equals(getString(R.string.friday)) && theDestinationObject.getFriday().getFrom_campus() != null){
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getFriday().getFrom_campus());
                 }
-                else if(theOnClickedDay.equals("Weekdays") && theDestinationObject.getWeekdays().getFrom_campus() != null){ //it is weekdays option
+                else if(theOnClickedDay.equals(getString(R.string.weekdays)) && theDestinationObject.getWeekdays().getFrom_campus() != null){ //it is weekdays option
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getWeekdays().getFrom_campus());
                 }
-                else if(theOnClickedDay.equals("Saturday") && theDestinationObject.getSaturday().getFrom_campus() != null){ //it is saturday option
+                else if(theOnClickedDay.equals(getString(R.string.saturday)) && theDestinationObject.getSaturday().getFrom_campus() != null){ //it is saturday option
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getSaturday().getFrom_campus());
                 }
-                else if(theOnClickedDay.equals("Sunday") && theDestinationObject.getSunday().getFrom_campus() != null){ //it is sunday option
+                else if(theOnClickedDay.equals(getString(R.string.sunday)) && theDestinationObject.getSunday().getFrom_campus() != null){ //it is sunday option
                     myShuttleDaysAdapter = new ShuttleAdapter(theDestinationObject.getSunday().getFrom_campus());
                 }
                 else{
                     List<String> tmpList = new ArrayList<>();
-                    tmpList.add("No shuttle found.");
+                    tmpList.add(getString(R.string.no_shuttle_found));
                     myShuttleDaysAdapter = new ShuttleAdapter(tmpList);
                 }
             }
         }
 
-        //binding.wearShuttleHourRecyclerView.setEdgeItemsCenteringEnabled(true); //if you want to change this later, just uncomment it align with the center.
+        binding.wearShuttleHourRecyclerView.setEdgeItemsCenteringEnabled(true); //if you want to change this later, just uncomment it align with the center.
         CustomScrollingLayoutCallback customScrollingLayoutCallback = new CustomScrollingLayoutCallback();
         binding.wearShuttleHourRecyclerView.setLayoutManager(new WearableLinearLayoutManager(this, customScrollingLayoutCallback));
         binding.wearShuttleHourRecyclerView.setAdapter(myShuttleDaysAdapter);

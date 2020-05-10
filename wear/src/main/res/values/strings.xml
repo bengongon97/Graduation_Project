@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">ENS_Tryouts_Project</string>
+    <string name="app_name">ENS Graduation Project</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
 
     <!-- General string files -->
-    <string name="call_failed">We could not load the values, please try again.</string>
+    <string name="call_failed">We could not load the information, please try again.</string>
     <string name="unsuccessful_response">There has been an error in our side. Please try again.</string>
     <!-- SUCard string files -->
     <string name="food">Food\n</string>
@@ -20,14 +20,19 @@
     <string name="weekdays">Weekdays</string>
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
+    <string name="no_shuttle_found">No shuttle buses found.</string>
     <!-- Schedule string files -->
     <string name="tuesday">Tuesday</string>
     <string name="wednesday">Wednesday</string>
     <string name="thursday">Thursday</string>
-
-    <string name="asdas">Please try again.</string>
-    <string name="asdasd">Please try again.</string>
-    <string name="asdad">Please try again.</string>
+    <string name="no_class_today">There is no class today.</string>
+    <string name="no_hours">No hour can be found.</string>
+    <!-- Settings string files -->
+    <string name="lang_settings">Language Settings</string>
+    <string name="change_lang">Change Language</string>
+    <string name="lang_chg_successful">Language is set to English</string>
+    <!-- Menu string files -->
+    <string name="menu_header">Menu Of The Day</string>
 
 
 </resources>

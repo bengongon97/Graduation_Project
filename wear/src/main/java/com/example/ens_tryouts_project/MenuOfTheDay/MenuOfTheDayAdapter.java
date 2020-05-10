@@ -17,10 +17,12 @@ public class MenuOfTheDayAdapter extends RecyclerView.Adapter<MenuOfTheDayAdapte
 
     Context context;
     List<MenuOfTheDayClass> menuArray;
+    String currentLang;
 
-    public MenuOfTheDayAdapter(Context context, List<MenuOfTheDayClass> menuArray) {
+    public MenuOfTheDayAdapter(Context context, List<MenuOfTheDayClass> menuArray, String currentLang) {
         this.context = context; //  RIGHT NOW, I DO NOT NEED THE CONTEXT BUT I AM JUST TAKING IT TO BE SAFE.
         this.menuArray = menuArray;
+        this.currentLang = currentLang;
     }
 
     class MenuOfTheDayView extends RecyclerView.ViewHolder {
@@ -50,21 +52,46 @@ public class MenuOfTheDayAdapter extends RecyclerView.Adapter<MenuOfTheDayAdapte
 
         MenuOfTheDayClass myMenuItem = menuArray.get(holder.getAdapterPosition());
 
-        if(myMenuItem.getMeal() != null)
-            holder.mealNameTextView.setText(myMenuItem.getMeal_en());
+        if(currentLang.equals("en")){
+            if(myMenuItem.getMeal() != null)
+                holder.mealNameTextView.setText(myMenuItem.getMeal_en());
 
-        //no nullity condition for these, if needed, add one.
-        if(myMenuItem.isDinner() && myMenuItem.isLunch())
-            holder.tabldotTextView.setText("Lunch, Dinner"); //to be generalized later
-        else if(!myMenuItem.isDinner() && myMenuItem.isLunch())
-            holder.tabldotTextView.setText("Lunch");
-        else if(!myMenuItem.isDinner() && !myMenuItem.isLunch())
-            holder.tabldotTextView.setText("Not Included in Fixed Menu");
-        else if(myMenuItem.isDinner() && !myMenuItem.isLunch())
-            holder.tabldotTextView.setText("Dinner");
+            //no nullity condition for these, if needed, add one.
+            if(myMenuItem.isDinner() && myMenuItem.isLunch())
+                holder.tabldotTextView.setText("Lunch, Dinner"); //to be generalized later
+            else if(!myMenuItem.isDinner() && myMenuItem.isLunch())
+                holder.tabldotTextView.setText("Lunch");
+            else if(!myMenuItem.isDinner() && !myMenuItem.isLunch())
+                holder.tabldotTextView.setText("Not Included in Fixed Menu");
+            else if(myMenuItem.isDinner() && !myMenuItem.isLunch())
+                holder.tabldotTextView.setText("Dinner");
 
-        if(myMenuItem.getCalorie() != null)
-            holder.calorieInfoTextView.setText("Cal: " + myMenuItem.getCalorie());
+            if(myMenuItem.getCalorie() != null){
+                String calorieText = "Cal: " + myMenuItem.getCalorie();
+                holder.calorieInfoTextView.setText(calorieText);
+            }
+        }
+        else if(currentLang.equals("tr")){
+            if(myMenuItem.getMeal() != null)
+                holder.mealNameTextView.setText(myMenuItem.getMeal());
+
+            //no nullity condition for these, if needed, add one.
+            if(myMenuItem.isDinner() && myMenuItem.isLunch())
+                holder.tabldotTextView.setText("Öğle, Akşam"); //to be generalized later
+            else if(!myMenuItem.isDinner() && myMenuItem.isLunch())
+                holder.tabldotTextView.setText("Öğle");
+            else if(!myMenuItem.isDinner() && !myMenuItem.isLunch())
+                holder.tabldotTextView.setText("Menüde yok.");
+            else if(myMenuItem.isDinner() && !myMenuItem.isLunch())
+                holder.tabldotTextView.setText("Akşam");
+
+            if(myMenuItem.getCalorie() != null){
+                String calorieText = "Kal: " + myMenuItem.getCalorie();
+                holder.calorieInfoTextView.setText(calorieText);
+            }
+
+        }
+
     }
 
     @Override

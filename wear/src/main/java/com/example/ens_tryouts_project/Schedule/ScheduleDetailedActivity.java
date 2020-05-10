@@ -3,23 +3,17 @@ package com.example.ens_tryouts_project.Schedule;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.wear.widget.WearableLinearLayoutManager;
-import androidx.wear.widget.WearableRecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ens_tryouts_project.Network.RetrofitClientInstance;
-import com.example.ens_tryouts_project.Network.RippleAPIService;
+import com.example.ens_tryouts_project.Network_And_Settings.RetrofitClientInstance;
+import com.example.ens_tryouts_project.Network_And_Settings.RippleAPIService;
 import com.example.ens_tryouts_project.R;
-import com.example.ens_tryouts_project.Shuttle.ShuttleClass;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,10 +37,17 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         final String theDay = intent.getStringExtra("theDay");
+        final String localizedTheDay = intent.getStringExtra("localizedTheDay");
+
+        String appCurrentLang = getResources().getConfiguration().locale.getLanguage();
 
         TextView dayTextView = findViewById(R.id.dayTextView);
-        if (theDay != null)
+        if (theDay != null && appCurrentLang.equals("en")){
             dayTextView.setText(theDay);
+        }
+        else if(localizedTheDay != null && appCurrentLang.equals("tr")){
+            dayTextView.setText(localizedTheDay);
+        }
 
         indeterminateBar3 = findViewById(R.id.indeterminateBar3);
 
