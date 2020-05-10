@@ -52,6 +52,7 @@ public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter
                     actualList = response.body();
                     if(actualList != null){
                         destinationList = destinationListCalculator(actualList);
+                        //Toast.makeText(ShuttleActivity.this, "Hello", Toast.LENGTH_LONG).show();
                     }
                     else{
                         destinationList.add("Trouble finding any available destinations.");
@@ -62,11 +63,11 @@ public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter
                     //binding.wearShuttleRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleActivity.this));
                     ShuttleHoursActivity.CustomScrollingLayoutCallback customScrollingLayoutCallback = new ShuttleHoursActivity.CustomScrollingLayoutCallback();
                     binding.wearShuttleRecyclerView.setLayoutManager(new WearableLinearLayoutManager(ShuttleActivity.this, customScrollingLayoutCallback));
-/* HERE MIGHT BE ENABLED, IF IT IS WANTED TO CUSTOMIZE.
+                    /* HERE MIGHT BE ENABLED, IF IT IS WANTED TO CUSTOMIZE.
                     binding.wearShuttleRecyclerView.setCircularScrollingGestureEnabled(true);
                     binding.wearShuttleRecyclerView.setBezelFraction(0.5f);
                     binding.wearShuttleRecyclerView.setScrollDegreesPerScreen(180);
-*/
+                    */
                     binding.wearShuttleRecyclerView.setAdapter(myShuttleAdapter);
                     myShuttleAdapter.setOnItemClickListener(ShuttleActivity.this);
                 } else {

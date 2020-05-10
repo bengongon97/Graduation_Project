@@ -10,21 +10,23 @@
 
     <ImageView
         android:id="@+id/diningImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="84dp"
+        android:layout_height="220dp"
         android:layout_marginBottom="8dp"
         android:src="@drawable/ic_dining"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/mySUImage"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833"
         tools:layout_conversion_absoluteHeight="89dp"
         tools:layout_conversion_absoluteWidth="75dp" />
 
     <ImageView
         android:id="@+id/moneyImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="194dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_money"
@@ -32,27 +34,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mySUImage"
+        app:layout_constraintVertical_bias="0.428"
         tools:layout_conversion_absoluteHeight="89dp"
         tools:layout_conversion_absoluteWidth="75dp" />
 
     <ImageView
         android:id="@+id/calenderImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="79dp"
+        android:layout_height="60dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:src="@drawable/ic_calender"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/mySUImage"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.506"
         tools:layout_conversion_absoluteHeight="92dp"
         tools:layout_conversion_absoluteWidth="73dp" />
 
     <ImageView
         android:id="@+id/busImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="185dp"
+        android:layout_height="71dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -60,8 +65,10 @@
         android:src="@drawable/ic_bus"
         app:layout_constraintBottom_toTopOf="@+id/mySUImage"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:layout_conversion_absoluteHeight="88dp"
         tools:layout_conversion_absoluteWidth="76dp" />
 
@@ -78,6 +85,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.506"
         tools:layout_conversion_absoluteHeight="129dp"
         tools:layout_conversion_absoluteWidth="163dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
