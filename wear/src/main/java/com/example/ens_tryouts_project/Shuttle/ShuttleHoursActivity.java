@@ -65,7 +65,7 @@ public class ShuttleHoursActivity extends AppCompatActivity {
                 else if(flag == 1){
                     flag = 0;
                     if(currentLang.equals("en")){
-                        String headerTextView = "To " + theDestinationObject.getRoute_name_eng();
+                        String headerTextView = "From " + theDestinationObject.getRoute_name_eng();
                         binding.destinationCampusTextView.setText(headerTextView); //Since it is the default, the name must be changed too.
                     }
                     else if(currentLang.equals("tr")){

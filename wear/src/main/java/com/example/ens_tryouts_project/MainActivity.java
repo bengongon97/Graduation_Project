@@ -14,7 +14,6 @@ import androidx.wear.widget.SwipeDismissFrameLayout;
 import com.example.ens_tryouts_project.LoginAndSettings.SessionManagerClass;
 import com.example.ens_tryouts_project.MenuOfTheDay.MenuOfTheDayActivity;
 
-import com.example.ens_tryouts_project.LoginAndSettings.LoginActivity;
 import com.example.ens_tryouts_project.LoginAndSettings.SettingsActivity;
 import com.example.ens_tryouts_project.SUCard.SUCardActivity;
 import com.example.ens_tryouts_project.Schedule.ScheduleActivity;
@@ -32,6 +31,16 @@ public class MainActivity extends WearableActivity {
 
         // Enables Always-on
         setAmbientEnabled();
+
+        sessionManager = new SessionManagerClass(getApplicationContext());
+        //Toast.makeText(getApplicationContext(), "User Login Status: " + sessionManager.isLoggedIn(), Toast.LENGTH_LONG).show();
+
+        /*
+         * Call this function whenever you want to check user login
+         * This will redirect user to LoginActivity is he is not
+         * logged in
+         * */
+        sessionManager.checkLogin();
 
         ImageView diningImage = findViewById(R.id.diningImage);
         diningImage.setOnClickListener(new View.OnClickListener() {
@@ -96,21 +105,4 @@ public class MainActivity extends WearableActivity {
             }
         }, 2000);
     }
-
-    /*
-    public class SwipeDismissFragment extends Fragment {
-        private final SwipeDismissFrameLayout.Callback callback =
-                new SwipeDismissFrameLayout.Callback() {
-                    @Override
-                    public void onDismissed(SwipeDismissFrameLayout layout) {
-                        // Code here for custom behavior such as going up the
-                        // back stack and destroying the fragment but staying in the app.
-                        sessionManager = new SessionManagerClass(getApplicationContext());
-                        if(sessionManager.isLoggedIn()){
-                            finish();
-                            moveTaskToBack(true);
-                        }
-                    }
-                };
-    }*/
 }

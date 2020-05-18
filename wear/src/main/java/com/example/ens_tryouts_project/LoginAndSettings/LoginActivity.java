@@ -24,7 +24,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(view);
 
         sessionManager = new SessionManagerClass(getApplicationContext());
-        sessionManager.checkLogin();
+
+        //Toast.makeText(getApplicationContext(), "User Login Status: " + sessionManager.isLoggedIn(), Toast.LENGTH_LONG).show();
 
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,8 +37,14 @@ public class LoginActivity extends AppCompatActivity {
                     if(password.equals("12345")){
                         //successful login
                         Toast.makeText(LoginActivity.this, getString(R.string.success_sign_in),Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
+                        // Creating user login session
+                        // Use user real data
+                        sessionManager.createLoginSession("menes", "12345");
+
+                        // Staring MainActivity
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
+                        finish();
                     }
                     else{
                         Toast.makeText(LoginActivity.this, getString(R.string.invalid_password),Toast.LENGTH_SHORT).show();

@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-import com.example.ens_tryouts_project.MainActivity;
 
 public class SessionManagerClass {
         // Shared Preferences
@@ -64,11 +63,11 @@ public class SessionManagerClass {
          * If false it will redirect user to login page
          * Else won't do anything
          * */
-        public void checkLogin(){
+        public void checkLogin() {
             // Check login status
-            if(this.isLoggedIn()){
-               //user is logged in
-                Intent i = new Intent(_context, MainActivity.class);
+            if (!this.isLoggedIn()) {
+                // user is not logged in, redirect him to Login Activity
+                Intent i = new Intent(_context, LoginActivity.class);
                 // Closing all the Activities
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
@@ -78,7 +77,6 @@ public class SessionManagerClass {
                 // Staring Login Activity
                 _context.startActivity(i);
             }
-            //if not logged in, stay in LoginActivity already.
         }
 
         /**
@@ -104,15 +102,9 @@ public class SessionManagerClass {
             editor.clear();
             editor.commit();
 
-            // After logout redirect user to Login Activity
             Intent i = new Intent(_context, LoginActivity.class);
-            // Closing all the Activities
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-            // Add new Flag to start new Activity
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-            // Staring Login Activity
+            // set the new task and clear flags
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             _context.startActivity(i);
         }
 

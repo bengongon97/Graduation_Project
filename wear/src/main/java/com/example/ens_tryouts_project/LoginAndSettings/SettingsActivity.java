@@ -40,6 +40,16 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        final String appCurrent = getResources().getConfiguration().locale.getLanguage();
+
+        if(appCurrent.equals("en")){
+            RadioButton radioButton = findViewById(R.id.englishRadioButton);
+            radioButton.setChecked(true);
+        }
+        else if(appCurrent.equals("tr")){
+            RadioButton radioButton = findViewById(R.id.turkishRadioButton);
+            radioButton.setChecked(true);
+        }
 
         change_lang_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +64,7 @@ public class SettingsActivity extends AppCompatActivity {
                 if(radioButton.getText().equals("English")){
                     String languageToLoad = "";
                     String country = "";
-                    String appCurrent = getResources().getConfiguration().locale.getLanguage();
+
 
                     if (appCurrent.equals("tr")) {
                         languageToLoad = "en";
@@ -81,7 +91,6 @@ public class SettingsActivity extends AppCompatActivity {
                 else if(radioButton.getText().equals("Türkçe")){
                     String languageToLoad = "";
                     String country = "";
-                    String appCurrent = getResources().getConfiguration().locale.getLanguage();
 
                     if (appCurrent.equals("en")) {
                         languageToLoad = "tr";
