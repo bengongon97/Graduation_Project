@@ -1,4 +1,4 @@
-package com.example.ens_tryouts_project.Network_And_Settings;
+package com.example.ens_tryouts_project.Network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

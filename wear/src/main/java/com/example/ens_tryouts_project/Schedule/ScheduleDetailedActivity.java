@@ -11,8 +11,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ens_tryouts_project.Network_And_Settings.RetrofitClientInstance;
-import com.example.ens_tryouts_project.Network_And_Settings.RippleAPIService;
+import com.example.ens_tryouts_project.Network.RetrofitClientInstance;
+import com.example.ens_tryouts_project.Network.RippleAPIService;
 import com.example.ens_tryouts_project.R;
 
 import java.util.ArrayList;

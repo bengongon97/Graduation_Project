@@ -1,10 +1,9 @@
-package com.example.ens_tryouts_project.Network_And_Settings;
+package com.example.ens_tryouts_project.LoginAndSettings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -20,14 +19,27 @@ import java.util.Locale;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    SessionManagerClass sessionManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        sessionManager = new SessionManagerClass(getApplicationContext());
 
         final RadioGroup myRadioGroup = findViewById(R.id.myRadioGroup);
         Button change_lang_button = findViewById(R.id.changeLangButton);
+        Button logoutButton = findViewById(R.id.logoutButton);
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sessionManager.logoutUser();
+                Toast.makeText(SettingsActivity.this, getString(R.string.success_logout), Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         change_lang_button.setOnClickListener(new View.OnClickListener() {
             @Override

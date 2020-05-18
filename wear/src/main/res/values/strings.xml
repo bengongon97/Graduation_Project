@@ -8,6 +8,7 @@
     <!-- General string files -->
     <string name="call_failed">We could not load the information, please try again.</string>
     <string name="unsuccessful_response">There has been an error in our side. Please try again.</string>
+    <string name="click_back_twice">Please click BACK again to exit</string>
     <!-- SUCard string files -->
     <string name="food">Food\n</string>
     <string name="print">Print\n</string>
@@ -34,6 +35,16 @@
     <string name="warning_message">Your app is already English.</string>
     <!-- Menu string files -->
     <string name="menu_header">Menu Of The Day</string>
-
+    <!-- Login string files -->
+    <string name="username">Enter your username</string>
+    <string name="password">Enter your password</string>
+    <string name="action_sign_in">SIGN IN</string>
+    <string name="success_sign_in">"You have successfully signed in. Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Your password does not match with our records. Please try again.</string>
+    <string name="logout">Log Out!</string>
+    <string name="logoutText">Log Out</string>
+    <string name="success_logout">You have successfully logged out!</string>
+    <string name="login_failed">Login failed</string>
 
 </resources>

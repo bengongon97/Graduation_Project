@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.ens_tryouts_project.Network_And_Settings.RetrofitMySUClientInstance;
-import com.example.ens_tryouts_project.Network_And_Settings.RippleAPIService;
+import com.example.ens_tryouts_project.Network.RetrofitMySUClientInstance;
+import com.example.ens_tryouts_project.Network.RippleAPIService;
 import com.example.ens_tryouts_project.R;
 import com.example.ens_tryouts_project.databinding.ActivitySuCardBinding;
 

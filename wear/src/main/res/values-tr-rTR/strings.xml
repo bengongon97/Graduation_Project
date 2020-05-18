@@ -24,4 +24,15 @@
     <string name="no_class_today">Bugün bir dersiniz yok.</string>
     <string name="no_hours">Herhangi bir saat bulunamadı.</string>
     <string name="warning_message">Uygulama zaten Türkçe.</string>
+    <string name="action_sign_in">Oturum Aç</string>
+    <string name="login_failed">Oturum açma başarısız oldu</string>
+    <string name="username">Kullanıcı adı giriniz</string>
+    <string name="password">Şifrenizi giriniz</string>
+    <string name="success_sign_in">Başarıyla oturum açtınız. Hoşgeldiniz!</string>
+    <string name="invalid_username">Geçerli bir kullanıcı adı değil</string>
+    <string name="invalid_password">Şifreniz kayıtlarımızla eşleşmiyor. Lütfen tekrar deneyin.</string>
+    <string name="logout">Oturumu Kapat!</string>
+    <string name="logoutText">Oturumu Kapa</string>
+    <string name="success_logout">Başarıyla oturumu kapattınız!</string>
+    <string name="click_back_twice">Çıkmak için GERİ tuşuna tekrar basınız</string>
 </resources>
