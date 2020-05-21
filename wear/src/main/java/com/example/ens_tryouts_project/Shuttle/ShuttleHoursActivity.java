@@ -131,6 +131,7 @@ public class ShuttleHoursActivity extends AppCompatActivity implements ShuttleAd
     }
 
     public void converterFactoryFromToTo(String theOnClickedDay, int flag){
+        finalList  = new ArrayList();
         if(flag == 0){ //To campus from destination (also default)
             if(theOnClickedDay != null && !theOnClickedDay.equals("")){ //it is a special occasion
                 if(theOnClickedDay.equals(getString(R.string.monday)) && theDestinationObject.getMonday().getTo_campus() != null){
@@ -154,8 +155,10 @@ public class ShuttleHoursActivity extends AppCompatActivity implements ShuttleAd
                     myShuttleDaysAdapter = new ShuttleAdapter(finalList);
                 }
                 else{
-                    finalList.add(getString(R.string.no_shuttle_found));
-                    myShuttleDaysAdapter = new ShuttleAdapter(finalList);
+                    if(finalList.size() == 0){
+                        finalList.add(getString(R.string.no_shuttle_found));
+                        myShuttleDaysAdapter = new ShuttleAdapter(finalList);
+                    }
                 }
             }
         }
@@ -182,8 +185,10 @@ public class ShuttleHoursActivity extends AppCompatActivity implements ShuttleAd
                     myShuttleDaysAdapter = new ShuttleAdapter(finalList);
                 }
                 else{
-                    finalList.add(getString(R.string.no_shuttle_found));
-                    myShuttleDaysAdapter = new ShuttleAdapter(finalList);
+                    if(finalList.size() == 0){
+                        finalList.add(getString(R.string.no_shuttle_found));
+                        myShuttleDaysAdapter = new ShuttleAdapter(finalList);
+                    }
                 }
             }
         }
@@ -199,9 +204,11 @@ public class ShuttleHoursActivity extends AppCompatActivity implements ShuttleAd
     public void onItemClick(int position) {
         //Toast.makeText(this,finalList.get(position),Toast.LENGTH_SHORT).show();
         // Two seconds to cancel the action
-        binding.innerConstraintLayout.setVisibility(View.VISIBLE);
-        circularProgress.setTotalTime(2000);
-        // Start the timer
-        circularProgress.startTimer();
+        if(!finalList.get(position).equals(getString(R.string.no_shuttle_found))){
+            binding.innerConstraintLayout.setVisibility(View.VISIBLE);
+            circularProgress.setTotalTime(5000);
+            // Start the timer
+            circularProgress.startTimer();
+        }
     }
 }
