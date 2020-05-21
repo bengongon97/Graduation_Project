@@ -35,4 +35,7 @@
     <string name="logoutText">Oturumu Kapa</string>
     <string name="success_logout">Başarıyla oturumu kapattınız!</string>
     <string name="click_back_twice">Çıkmak için GERİ tuşuna tekrar basınız</string>
+    <string name="login_header">Devam etmek için lütfen oturum açınız</string>
+    <string name="warning_message_shuttle_specific">4. Levent güzergahı bilmem ne köprüsünden geçmektedir.</string>
+    <string name="okay">Tamam...</string>
 </resources>

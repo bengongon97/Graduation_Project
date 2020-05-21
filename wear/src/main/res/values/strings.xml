@@ -20,7 +20,9 @@
     <string name="friday">Friday</string>
     <string name="weekdays">Weekdays</string>
     <string name="saturday">Saturday</string>
+    <string name="okay">Okay...</string>
     <string name="sunday">Sunday</string>
+    <string name="warning_message_shuttle_specific">4. Levent uses some bridge.</string>
     <string name="no_shuttle_found">No shuttle buses found.</string>
     <!-- Schedule string files -->
     <string name="tuesday">Tuesday</string>
@@ -46,5 +48,7 @@
     <string name="logoutText">Log Out</string>
     <string name="success_logout">You have successfully logged out!</string>
     <string name="login_failed">Login failed</string>
+    <string name="login_header">Please login to proceed</string>
+
 
 </resources>
