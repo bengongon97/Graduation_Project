@@ -23,6 +23,8 @@ public class ShuttleAvailableDaysActivity extends AppCompatActivity implements S
     ShuttleClass theDestinationObject;
     Intent intent;
 
+    //Activity number 2 for shuttle, showing available days
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

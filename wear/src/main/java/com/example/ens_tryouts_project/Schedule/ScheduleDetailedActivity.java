@@ -30,6 +30,9 @@ public class ScheduleDetailedActivity extends AppCompatActivity {
     ProgressBar indeterminateBar3;
     ScheduleDaysSubClass tryout = new ScheduleDaysSubClass(tmp,tmp,tmp,tmp,tmp,tmp,tmp,0);
 
+    // THE REASON WHY THIS LOOKS COMPLICATED IS THAT I TRIED WHAT IT MEMBERS TOLD ME, TRYING TO FETCH DATA WITHOUT DIRECT USAGE OF POJO CLASS
+    // AND THUS GENERALIZING THE PROGRESS
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

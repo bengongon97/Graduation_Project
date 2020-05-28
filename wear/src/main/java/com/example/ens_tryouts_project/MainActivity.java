@@ -85,6 +85,7 @@ public class MainActivity extends WearableActivity {
         });
     }
 
+    // this is written in case a watch has a back button. testable in emulator
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {

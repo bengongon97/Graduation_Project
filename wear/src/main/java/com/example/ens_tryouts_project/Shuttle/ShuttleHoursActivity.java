@@ -28,6 +28,8 @@ public class ShuttleHoursActivity extends AppCompatActivity implements ShuttleAd
     ShuttleClass theDestinationObject;
     List<String> finalList = new ArrayList<>();
 
+    //Last activity for shuttle, number 3, to show the details.
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

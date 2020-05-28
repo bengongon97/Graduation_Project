@@ -27,6 +27,8 @@ public class ShuttleActivity extends AppCompatActivity implements ShuttleAdapter
     ShuttleAdapter myShuttleAdapter;
     private ActivityShuttleBinding binding;
 
+    // Activity number 1 for shuttle, loading destinations.
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -21,6 +21,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     SessionManagerClass sessionManager;
 
+    //SETTINGS SCREEN AND ADDITIONAL LOGIN ACTIONS. CHECKS ARE NECESSARY TO MAINTAIN LANGUAGE CHANGES THROUGHOUT THE APP.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
