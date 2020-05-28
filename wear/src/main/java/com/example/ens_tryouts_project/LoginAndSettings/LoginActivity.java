@@ -25,8 +25,6 @@ public class LoginActivity extends AppCompatActivity {
 
         sessionManager = new SessionManagerClass(getApplicationContext());
 
-        //Toast.makeText(getApplicationContext(), "User Login Status: " + sessionManager.isLoggedIn(), Toast.LENGTH_LONG).show();
-
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

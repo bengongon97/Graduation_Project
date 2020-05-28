@@ -30,7 +30,7 @@ public class MainActivity extends WearableActivity {
         setAmbientEnabled();
 
         sessionManager = new SessionManagerClass(getApplicationContext());
-        //Toast.makeText(getApplicationContext(), "User Login Status: " + sessionManager.isLoggedIn(), Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "User Login Status: " + sessionManager.isLoggedIn(), Toast.LENGTH_LONG).show(); //to check status, simply uncomment this.
 
         /*
          * Call this function whenever you want to check user login
